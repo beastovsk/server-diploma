@@ -7,11 +7,7 @@ const indexRouter = require("./routes/index.router");
 const app = express();
 const { PORT } = process.env;
 const corsOptions = {
-	origin: [
-		"http://localhost:3000",
-		"http://127.0.0.1:3000",
-		"https://663cef1a2835740626755689--lively-starlight-8ad587.netlify.app",
-	],
+	origin: ["http://localhost:3000", "http://127.0.0.1:3000", "*"],
 
 	credentials: true,
 	methods: ["GET", "POST", "DELETE", "PATCH", "PUT"],
