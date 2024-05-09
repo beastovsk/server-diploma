@@ -10,8 +10,9 @@ const corsOptions = {
 	origin: [
 		"http://localhost:3000",
 		"http://127.0.0.1:3000",
-		"https://663cef1a2835740626755689--lively-starlight-8ad587.netlify.app/",
+		"https://663cef1a2835740626755689--lively-starlight-8ad587.netlify.app",
 	],
+
 	credentials: true,
 	methods: ["GET", "POST", "DELETE", "PATCH", "PUT"],
 };
