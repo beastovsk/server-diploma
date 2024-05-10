@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransport({
 	service: "gmail",
 	auth: {
-		user: "diplom735@gmail.com",
+		user: "madymarovakylbek01@gmail.com",
 		pass: "bthj lxbv udlx kzfk",
 	},
 });
@@ -12,12 +12,17 @@ const formController = {
 	sendUserData: async (req, res) => {
 		try {
 			const { name, phone } = req.body;
+			let text = `Имя: ${name}\nТелефон: ${phone}`;
+
+			if (req.body.target && req.body.deviceCounter) {
+				text = `Имя: ${name}\nТелефон: ${phone}\nДля чего нужен интернет: ${req.body.target}\nКоличество девайсов: ${req.body.deviceCounter}`;
+			}
 
 			const mailOptions = {
-				from: "diplom735@gmail.com",
-				to: "diplom735@gmail.com",
-				subject: "Тема письма",
-				text: `Имя: ${name}\nТелефон: ${phone}`,
+				from: "madymarovakylbek01@gmail.com",
+				to: "madymarovakylbek01@gmail.com",
+				subject: "Заявка от клиента",
+				text,
 			};
 
 			transporter.sendMail(mailOptions, (error, info) => {
